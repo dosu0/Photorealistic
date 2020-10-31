@@ -1,0 +1,12 @@
+# ImGui Window Cache
+imgui.ini
+
+# VsCode Project files
+.vscode/
+
+# Executables
+Photorealistic
+*.o
+
+# macOS
+.DS_Store
