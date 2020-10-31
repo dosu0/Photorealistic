@@ -1,6 +1,7 @@
-# Photorealistic
-![License](https://img.shields.io/github/license/platinum-phoenix/Photorealistic)
-
+<center>
+<img src="graphics/banner.png"></img>
+<img src="https://img.shields.io/github/license/platinum-phoenix/Photorealistic"></img>
+</center>
 
 # About
 Photorealistic is a low-dependency Ray Tracing Engine to generate photorealistic images.
