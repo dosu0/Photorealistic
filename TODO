@@ -1,0 +1,5 @@
+- Test builds on
+    - Linux
+    - Windows
+
+- Convert build tool to CMake
