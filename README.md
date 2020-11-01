@@ -1,9 +1,24 @@
 
-<img src="graphics/banner.png" style="display:block;margin-left:auto;margin-right: auto;">
-<img src="https://img.shields.io/github/license/platinum-phoenix/Photorealistic" style="display:block;margin-left:auto;margin-right: auto;">
+<img src="graphics/banner.png">
+
+![license-mit](https://img.shields.io/github/license/platinum-phoenix/Photorealistic)
+![build-passing](https://img.shields.io/badge/build-passing-brightgreen)
+
+
+# Table of Contents
+- [About](#About)
+- [Dependencies](#Dependencies)
+- [Building](#Building)
+- [Notes](#Notes)
+- [Credits](#Credits)
 
 # About
 Photorealistic is a low-dependency Ray Tracing Engine to generate photorealistic images.
+
+Supported Systems:
+- macOS
+- Linux (in theory)
+- Windows MYSYS2 (in theory)
 
 # Dependencies
 
@@ -29,6 +44,29 @@ MSYS2:
 
 Yup, those are the two dependencies, the rest are built with the project.
 
+# Building
+
+To build make sure you have managed the [dependencies](#Dependencies)
+
+
+Then run:
+```sh
+git clone https://github.com/Platinum-Phoenix/Photorealistic
+cd Photorealistic
+make
+```
+It should generate an executable named "Photorealistic"
+
+Running:
+```sh
+./Photorealistic
+```
+
+# Contributing
+
+You can help by:
+- Reporting and issue
+- Creating a fork and doing a pull-request
 # Notes
 - To use the tools (found in the tools direcotry) you may need to run:
 ```sh
