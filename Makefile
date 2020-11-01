@@ -12,15 +12,16 @@ IMGUI_DIR = extlibs/imgui
 JSON_DIR = extlibs/json 
 INDICATORS_DIR = extlibs/indicators
 SOURCES = src/main.cpp
+SOURCES += src/App.cpp
 SOURCES += $(IMGUI_DIR)/imgui.cpp $(IMGUI_DIR)/imgui_demo.cpp $(IMGUI_DIR)/imgui_draw.cpp $(IMGUI_DIR)/imgui_widgets.cpp
 SOURCES += $(IMGUI_DIR)/backends/imgui_impl_sdl.cpp $(IMGUI_DIR)/backends/imgui_impl_opengl3.cpp
-SOURCES += src/App.cpp
 OBJS = $(addsuffix .o, $(basename $(notdir $(SOURCES))))
 UNAME_S := $(shell uname -s)
 
-CXXFLAGS = -I$(IMGUI_DIR) -I$(IMGUI_DIR)/backends
-CXXFLAGS += -I${JSON_DIR}
-CXXFLAGS += -I${INDICATORS_DIR}
+CXXFLAGS = -isystem $(IMGUI_DIR) -isystem $(IMGUI_DIR)/backends
+CXXFLAGS += -isystem ${JSON_DIR}
+CXXFLAGS += -isystem ${INDICATORS_DIR}
+CXXFLAGS += -isystem extlibs
 CXXFLAGS += -g -Wall -Wformat
 LIBS =
 ##---------------------------------------------------------------------
