@@ -2,16 +2,20 @@
 #include <vector>
 #include <stdio.h>
 
-
 // Foward Declarations
 static void MainMenuBar(bool *done, bool *show_demo_window);
 static void ObjectHierarchy();
+//static void ViewPort(GLuint *texture, int w, int h);
 
 int main(int argc, char *argv[])
 {
-    ImGuiContext *ctx=ImGui::CreateContext();
-    ImGui::SetCurrentContext(ctx);
+    ImGui::CreateContext();
     App app(ImGui::GetIO());
+    int my_image_width = 0;
+    int my_image_height = 0;
+    GLuint my_image_texture = 0;
+    bool ret = app.LoadTextureFromFile("graphics/icon.png", &my_image_texture, &my_image_width, &my_image_height);
+    IM_ASSERT(ret);
 
     // Our state
     static bool show_demo_window = false;
@@ -41,7 +45,11 @@ int main(int argc, char *argv[])
         ObjectHierarchy();
         if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);
-
+        ImGui::Begin("OpenGL Texture Text");
+        ImGui::Text("pointer = %p", my_image_texture);
+        ImGui::Text("size = %d x %d", my_image_width, my_image_height);
+        ImGui::Image((void *)(intptr_t)my_image_texture, ImVec2(my_image_width, my_image_height));
+        ImGui::End();
         app.Render();
     }
 
@@ -109,29 +117,32 @@ void MainMenuBar(bool *done, bool *show_demo_window)
 
 void ObjectHierarchy()
 {
-    if (ImGui::Begin("Object Hierarchy"))
+    ImGui::Begin("Object Hierarchy", NULL, ImGuiWindowFlags_MenuBar);
+    if (ImGui::BeginMenuBar())
     {
-        if (ImGui::BeginMenuBar())
+        if (ImGui::BeginMenu("New"))
         {
-            if (ImGui::BeginMenu("New"))
+            if (ImGui::MenuItem("Camera"))
             {
-                if (ImGui::MenuItem("Camera"))
-                {
-                    // Code to add camera
-                }
-
-                if (ImGui::MenuItem("Sphere"))
-                {
-                    // Code to add sphere
-                }
-                ImGui::EndMenu();
+                // Code to add camera
             }
-            ImGui::EndMenuBar();
+
+            if (ImGui::MenuItem("Sphere"))
+            {
+                // Code to add sphere
+            }
+            ImGui::EndMenu();
         }
-        ImGui::End();
+        ImGui::EndMenuBar();
     }
-    else
-    {
-        ImGui::End();
-    }
+    ImGui::End();
 }
+
+/* void ViewPort(GLuint* texture, int w, int h)
+{
+    ImGui::Begin("OpenGL Texture Text");
+    ImGui::Text("pointer = %p", texture);
+    ImGui::Text("size = %d x %d", w, h);
+    ImGui::Image((void *)(intptr_t)texture, ImVec2(w, h));
+    ImGui::End();
+} */
