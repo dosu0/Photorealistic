@@ -2,7 +2,7 @@
     App Class
     @file App.hpp
     @author Platinum-Phoenix
-    @version 0.1.0 2020-10-31
+    @version 0.2.0 2020-10-31
 */
 
 #pragma once
@@ -54,13 +54,16 @@ private:
     void ProcessInput();
     void Update();
 
+    // Initiliazation Helper Methods
+    const char* DecideGlVersion();
+    void InitOpenGlLoader();
+
     // Window
     bool mIsRunning;
-    SDL_WindowFlags window_flags;
     SDL_Window* mWindow;
-    SDL_GLContext gl_context;
+    SDL_GLContext mGlContext;
     ImVec4 clear_color;
-    ImGuiIO &io;
+    ImGuiIO &mIo;
     bool LoadTextureFromFile(const char* filename, GLuint* out_texture, int* out_width, int* out_height);
 
 };

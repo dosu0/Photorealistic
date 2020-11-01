@@ -2,7 +2,7 @@
     Main file for Photorealistic
     @file main.cpp
     @author Platinum-Phoenix
-    @version 0.1.0
+    @version 0.2.0
 */
 
 #include "App.hpp"
