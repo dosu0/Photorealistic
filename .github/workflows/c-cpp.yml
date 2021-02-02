@@ -14,7 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: deps
-      run: sudo apt-get install sdl2
+      run: sudo apt install libsdl2-dev libsdl2-2.0-0 -y
+      
   
     - name: make
       run: make
