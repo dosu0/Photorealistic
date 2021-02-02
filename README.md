@@ -2,7 +2,7 @@
 <img src="graphics/banner.png">
 
 ![license-mit](https://img.shields.io/github/license/platinum-phoenix/Photorealistic)
-![build-passing](https://img.shields.io/badge/build-passing-brightgreen)
+![C/C++ CI](https://github.com/Platinum-Phoenix/Photorealistic/workflows/C/C++%20CI/badge.svg)
 
 
 # Table of Contents
