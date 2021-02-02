@@ -13,5 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: deps
+      run: sudo apt-install sdl2
+  
     - name: make
       run: make
